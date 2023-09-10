@@ -1,10 +1,10 @@
 <?php
 include "connect.php";
-$page = $_POST['page'];
-$total = 5;
-$pos = ($page-1)*$total;
-$loai = $_POST['loai'];
-$query = 'SELECT * FROM `sanphammoi` WHERE `loai` = '.$loai.' LIMIT '.$pos.','.$total.'
+$email = $_POST['email'];
+$pass = $_POST['pass'];
+
+
+$query = 'SELECT * FROM `users` WHERE `email` = "'.$email.'" AND "'.$pass.'" 
 ';
 $data = mysqli_query($conn,$query);
 $reslut = array();
